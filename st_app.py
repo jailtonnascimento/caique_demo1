@@ -8,6 +8,7 @@ import numpy as np
 import json
 import os
 from typing import Dict, Any
+import streamlit as st
 
 # === CHAMADAS ÀS LLMs ===
 import openai
@@ -229,9 +230,15 @@ relatorio_json = gerar_json_para_llm(df)
 
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=GOOGLE_API_KEY)
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# genai.configure(api_key=GOOGLE_API_KEY)
+
+
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+
+
 
 from fpdf import FPDF
 from datetime import datetime
