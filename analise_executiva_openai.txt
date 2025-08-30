@@ -1,0 +1,49 @@
+## Relatório Executivo de Vendas: Foco em Rentabilidade e Crescimento Sustentável
+
+**Assunto:** Análise de Desempenho de Vendas - Janeiro/2025
+
+**Visão Geral:**
+
+Janeiro de 2025 apresentou um faturamento total de **R$ 169.970.778,22**, porém, o resultado líquido é alarmante: um **lucro bruto negativo de R$ 89.479.686,85** e uma **margem média de -66,3%**. Esta situação demanda ação imediata para reverter o cenário de perdas.
+
+---
+
+### 🚀 3 Conquistas Estratégicas:
+
+1.  **Expansão Internacional Robusta:** As exportações atingiram **R$ 71.036.677,39**, demonstrando um forte potencial de mercado em países como Uruguai, Paraguai, Peru e Argentina. Este é um pilar fundamental para a diversificação e mitigação de riscos.
+2.  **Concentração de Receita em Clientes Chave:** Os 3 maiores clientes representam **22,3% do faturamento**, indicando um bom relacionamento e dependência estratégica com grandes players do mercado.
+3.  **Liderança de Vendas por Renato Belisario:** Com **R$ 72.625.033,50 em faturamento**, Renato Belisario se destaca como o principal motor de vendas, demonstrando alta performance e capacidade de gerar receita significativa.
+
+---
+
+### ⚠️ 2 Riscos Críticos e Urgentes:
+
+1.  **Margem Bruta Severamente Negativa (-66,3%):** Este é o ponto mais crítico. A empresa está operando com prejuízo em suas vendas, o que é insustentável. A média de margem negativa indica que, em quase todas as transações, o custo de produção e venda excede o valor faturado. Por exemplo, a venda do produto **"POLITHERM PVC CINZA 783"** para a **ALPINA EQUIPAMENTOS INDUSTRIAIS LTDA.** resultou em uma margem de **-0,76%** (R$ -63.705,18 de prejuízo), e a venda de **"DUPLEX120 BRANCO - LAMINADO PVC REVEST.C/PVDC"** para a **EUROFARMA LABORATORIOS S/A.** gerou um prejuízo de **R$ 62.597,63** com margem de **-0,89%**.
+2.  **Vendas com Prejuízo Significativo:** Identificamos inúmeras transações com margens negativas. Um exemplo alarmante é a venda do produto **"CRISTALIA PRODUTOS QUIMICOS FARMS. LTDA."** com margem de **-2098,81%** (prejuízo de R$ 29.294.168,53) e a venda para **"MAXPACKING EMBALAGENS ESPECIAIS LTDA"** com margem de **-2073,36%** (prejuízo de R$ 30.871.760,09). Estes casos isolados, mas recorrentes, corroem a lucratividade da empresa e precisam ser investigados e corrigidos imediatamente.
+
+---
+
+### 💡 3 Oportunidades de Crescimento Imediato:
+
+1.  **Otimização de Preços e Descontos (Margem):** Dado o cenário de margem negativa, é imperativo **revisar URGENTEMENTE a política de precificação e descontos**. A análise das "vendas com prejuízo" revela que produtos como "POLIPHARMA CRISTAL - LAMINADO PVC MONO" e "DUPLEX120 BRANCO - LAMINADO PVC REVEST.C/PVDC" estão sendo vendidos com margens drasticamente negativas. É crucial implementar uma estratégia de precificação baseada em valor e custo real, com gatilhos para renegociação de margens em contratos de longo prazo.
+2.  **Cross-sell e Upsell em Clientes Estratégicos:** Os 3 principais clientes (EUROFARMA, CIMED, PRATI, DONADUZZI) representam uma base sólida. É preciso mapear produtos complementares e de maior valor agregado que possam ser oferecidos a eles. A identificação de **"produtos com margem acima de 50%"** (atualmente vazia nos dados, mas que deve ser preenchida com urgência) é um direcionador chave para esta estratégia.
+3.  **Expansão em Mercados Internacionais com Foco em Margem:** Embora a exportação seja um ponto forte, é vital analisar a rentabilidade por país. O objetivo é expandir em mercados que ofereçam margens mais saudáveis, alavancando o sucesso já obtido, mas com um olhar atento à precificação e custos logísticos.
+
+---
+
+### 🎯 Recomendações Específicas por Gestor de Conta:
+
+*   **Renato Belisario:**
+    *   **Ação Imediata:** Realizar uma revisão granular de todas as suas vendas em Janeiro/2025. Identifique as transações com margem negativa e apresente um plano de ação corretivo para cada uma (revisão de preço, renegociação de contrato, ou cancelamento se necessário).
+    *   **Foco:** Explorar oportunidades de cross-sell e upsell com os clientes EUROFARMA e CIMED, apresentando produtos com maior potencial de margem.
+
+*   **Felipe Rodrigues:**
+    *   **Ação Imediata:** Similar a Renato, revisar todas as vendas de Janeiro/2025, com atenção especial àquelas com margens negativas, especialmente para os clientes PRATI, DONADUZZI & CIA.LTDA. e EUROFARMA.
+    *   **Foco:** Identificar produtos de alta margem que podem ser oferecidos aos seus principais clientes e explorar novos leads no mercado internacional.
+
+*   **Sergio Pachon:**
+    *   **Ação Imediata:** Concentre-se na análise das suas vendas com margem negativa. Identifique os produtos e clientes que mais contribuem para este cenário e proponha ações corretivas urgentes.
+    *   **Foco:** Desenvolver uma estratégia de precificação mais agressiva para produtos com potencial de margem e fortalecer o relacionamento com clientes que apresentam bons resultados.
+
+*   **Manuel Kolchevsky:**
+    *   **Ação Imediata:** Sua carteira de clientes ainda é pequena em termos de faturamento, mas é crucial garantir que as vendas sejam lucrativas. Revise todas as suas transações de Janeiro/2025 com foco na margem.
