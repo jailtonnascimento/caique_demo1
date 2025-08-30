@@ -1,2 +1,10 @@
+# .dockerignore
+__pycache__
+*.pyc
 .env
-!.env.example
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+node_modules
