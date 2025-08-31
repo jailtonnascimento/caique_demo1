@@ -29,7 +29,7 @@ col1, col2 = st.columns([1, 4])
 with col1:
     st.image("assets/ayia.png", width=300)
 with col2:
-    st.markdown("<br><br><br><br><h4 style='margin-top: 30px;'>Onde dados fluem, decisões acontecem</h4>", unsafe_allow_html=True)
+    st.markdown("<br><br><br><br><h4 style='margin-top: 30px;margin-left:30px;'>Onde dados fluem, decisões acontecem</h4>", unsafe_allow_html=True)
 
 
 # Estilo CSS personalizado
