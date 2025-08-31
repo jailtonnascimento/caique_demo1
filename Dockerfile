@@ -1,6 +1,6 @@
 # Dockerfile- mudou o nome
 # Usa uma imagem estável do Python 3.11 com Alpine ou Debian
-FROM python:3.11-slim AS base
+FROM python:3.11.8-slim-bullseye AS base
 
 # Evita perguntas durante a instalação de pacotes
 ENV DEBIAN_FRONTEND=noninteractive
@@ -17,7 +17,9 @@ RUN apt-get update && \
         build-essential \
         gcc \
         g++ \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get upgrade -y && \
+    apt-get dist-upgrade -y && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copia requirements
 COPY requirements.txt .

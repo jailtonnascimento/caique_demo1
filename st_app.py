@@ -18,11 +18,19 @@ from dotenv import load_dotenv
 
 # Configurar página primeiro
 st.set_page_config(
-    page_title="📊 Agente de IA | Análise de Vendas",
+    page_title="📊 Ayia",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Adiciona o logo e o título lado a lado no topo da página
+col1, col2 = st.columns([1, 4])
+with col1:
+    st.image("assets/ayia.png", width=300)
+with col2:
+    st.markdown("<br><br><br><br><h4 style='margin-top: 30px;'>Onde dados fluem, decisões acontecem</h4>", unsafe_allow_html=True)
+
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -243,87 +251,6 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 from fpdf import FPDF
 from datetime import datetime
 
-def gerar_pdf_profissional(relatorio_json, analise_ia, df, output_path="relatorio_executivo.pdf"):
-    """
-    Gera um PDF corporativo com logo, análise da IA, gráficos (como imagem) e métricas.
-    """
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    
-    # --- Capa ---
-    pdf.set_fill_color(30, 59, 93)  # Azul escuro
-    pdf.rect(0, 0, 210, 297, 'F')  # Fundo azul
-    pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Arial", "B", 28)
-    pdf.cell(0, 100, "Relatório de Vendas", ln=True, align="C")
-    pdf.set_font("Arial", "", 18)
-    pdf.cell(0, 10, f"{relatorio_json['periodo_analisado']}", ln=True, align="C")
-    pdf.cell(0, 10, f"Gerado em: {datetime.now().strftime('%d/%m/%Y')}", ln=True, align="C")
-    pdf.ln(40)
-    pdf.set_font("Arial", "", 14)
-    pdf.cell(0, 10, "Análise Inteligente com IA Generativa", ln=True, align="C")
-    pdf.set_text_color(0, 0, 0)
-
-    # --- Página 1: Métricas e Análise ---
-    pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
-    pdf.set_text_color(30, 59, 93)
-    pdf.cell(0, 10, "Resumo Executivo", ln=True)
-    pdf.ln(5)
-
-    # Métricas
-    pdf.set_font("Arial", "", 12)
-    metricas = relatorio_json["metricas_gerais"]
-    pdf.cell(0, 8, f"- Faturamento Total: R$ {metricas['faturamento_total_r$']:,.2f}", ln=True)
-    pdf.cell(0, 8, f"- Lucro Bruto: R$ {metricas['lucro_bruto_total_r$']:,.2f}", ln=True)
-    pdf.cell(0, 8, f"- Margem Média: {metricas['margem_media_%']}%", ln=True)
-    pdf.cell(0, 8, f"- Concentração Top 3: {metricas['concentracao_receita_top3_clientes_%']}% do faturamento", ln=True)
-    pdf.ln(10)
-
-    # Análise da IA
-    pdf.set_font("Arial", "B", 14)
-    pdf.set_text_color(0, 0, 0)
-    pdf.cell(0, 10, "Análise da Inteligência Artificial", ln=True)
-    pdf.set_font("Arial", "", 12)
-    pdf.set_text_color(50, 50, 50)
-    
-    # Quebrar texto em linhas
-    for line in analise_ia.split("\n"):
-        if line.strip():
-            # Substituir caracteres não suportados
-            safe_line = line.strip().replace("→", "->")
-            pdf.cell(0, 6, safe_line, ln=True)
-
-    # --- Página 2: Gráficos (exemplo: salvar como PNG e inserir)
-    pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
-    pdf.set_text_color(30, 59, 93)
-    pdf.cell(0, 10, "Painel de Desempenho", ln=True)
-    pdf.ln(10)
-
-    # Aqui você pode salvar os gráficos como imagens e inserir
-    # Exemplo (se você salvar fig1 como 'fig1.png'):
-    # pdf.image("fig1.png", x=10, w=190)
-
-    # Placeholder
-    pdf.set_font("Arial", "I", 12)
-    pdf.cell(0, 10, "Gráfico 1: Margem por Cliente (Top 10)", ln=True)
-    # pdf.image("fig1.png", x=15, w=180)  # Descomente quando salvar figuras
-
-    pdf.ln(10)
-    pdf.cell(0, 10, "Gráfico 2: Faturamento por Segmento + Margem", ln=True)
-    # pdf.image("fig2.png", x=15, w=180)
-
-    # --- Finalizar ---
-    pdf.set_font("Arial", "I", 10)
-    pdf.set_text_color(100, 100, 100)
-    pdf.ln(20)
-    pdf.cell(0, 10, "© 2025 | Agente de IA - Análise de Vendas | Confidencial", align="C")
-
-    # Salvar
-    pdf.output(output_path)
-    return output_path
 
 def chamar_llm_openai(prompt, modelo="gpt-4o-mini", temperatura=0.7):
     try:
@@ -596,25 +523,6 @@ if 'resultado_basico' in st.session_state:
     # Alerta geral
     if relatorio_json["riscos_criticos"]["vendas_com_prejuizo"]:
         st.markdown('<div class="alert-red">⚠️ <b>Atenção:</b> Existem vendas com <b>margem negativa</b>.</div>', unsafe_allow_html=True)
-
-# Botão de PDF
-if st.sidebar.button("📥 Gerar PDF Executivo"):
-    if 'resultado_basico' not in st.session_state:
-        st.error("❌ Primeiro, gere a análise com IA!")
-    else:
-        with st.spinner("📄 Gerando PDF profissional..."):
-            caminho_pdf = gerar_pdf_profissional(
-                relatorio_json,
-                st.session_state['resultado_basico']["resposta"],
-                df
-            )
-            with open(caminho_pdf, "rb") as f:
-                st.download_button(
-                    "⬇️ Baixar Relatório em PDF",
-                    f,
-                    file_name="relatorio_executivo_vendas.pdf",
-                    mime="application/pdf"
-                )
 
 else:
     st.info("👈 Carregue um arquivo e clique em 'Gerar Análise com IA' para começar.")
