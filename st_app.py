@@ -11,7 +11,7 @@ from typing import Dict, Any
 import streamlit as st
 
 # === CHAMADAS ÀS LLMs ===
-import openai
+from openai import OpenAI
 import google.generativeai as genai
 from dotenv import load_dotenv
  
@@ -243,7 +243,7 @@ load_dotenv()
 # genai.configure(api_key=GOOGLE_API_KEY)
 
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
@@ -254,7 +254,7 @@ from datetime import datetime
 
 def chamar_llm_openai(prompt, modelo="gpt-4o-mini", temperatura=0.7):
     try:
-        resposta = openai.ChatCompletion.create(
+        resposta = client.chat.completions.create(
             model=modelo,
             messages=[
                 {"role": "system", "content": "Você é um Diretor Comercial Sênior. Gere relatórios executivos diretos, estratégicos e acionáveis."},
@@ -263,7 +263,7 @@ def chamar_llm_openai(prompt, modelo="gpt-4o-mini", temperatura=0.7):
             temperature=temperatura,
             max_tokens=1500
         )
-        return {"sucesso": True, "resposta": resposta.choices[0].message['content'].strip()}
+        return {"sucesso": True, "resposta": resposta.choices[0].message.content.strip()}
     except Exception as e:
         return {"sucesso": False, "erro": str(e)}
 
