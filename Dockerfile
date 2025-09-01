@@ -33,12 +33,12 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Cria usuário não-root (boa prática de segurança)
-RUN groupadd -r streamlit && useradd -r -g streamlit appuser && \
-    chown -R appuser:streamlit /app && \
-    chmod -R 755 /app
+RUN groupadd -r streamlit && useradd -r -g streamlit -m appuser && \
+    chown -R appuser:streamlit /app
 
 USER appuser
-
+ENV HOME=/home/appuser
+ 
 # Expõe a porta
 EXPOSE 8501
 
